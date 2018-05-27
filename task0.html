@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Typing Speed Counter
+	</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+</head>
+<body>
+		<div class="hed">
+			<h1 style="font-family:Tajawal; font-size: 50px; font-weight: lighter; text-decoration: underline;">Typing Speed Counter</h1>
+		</div>
+	<div class="topic" style="background-color:#7A7A7A;">
+	<p style="font-family: Tajawal; font-size:40px; color:black;"> Sample Text:</p>
+	<hr>
+	<br>
+	<p id="comp" style="font-family: Tajawal; font-size:30px; color: white;">Typing speed test or usually typing test used for a user’s typing speed and accuracy. The two factors will define the proficiency of the person in typing. Some typing test used character based calculation in which 5 characters count as a word, regardless how many characters in the particular word. These Character based calculation has its own benefit like it independent from the text passage, there may be more lengthy word in one passage then other, but its calculate same speed all time.
+ 	</p>
+ 	<br>
+ 	<br>
+	</div>
+
+<div class="textbox">
+	<p style="font-family: Tajawal; font-size:40px; color:black;"> Type the text here:</p>
+	<hr>
+	<br>
+	<form>
+		<textarea class="textarea" style=" position:relative; padding-left: 20px; padding-top:10px; color: red; font-family: Tajawal; font-size:25px; color: white; margin-left:150px;" id="usem" rows="10" cols="100" placeholder="type here" onclick="timer_start()" oninput="ontype()"></textarea>
+	</form>
+</div>
+<br>
+	<button class="button" onclick="Submit()" type="Submit">Submit!</button>
+	<p id="oninp"></p>
+
+<script type="text/javascript">
+			var initial = "Typing speed test or usually typing test used for a user’s typing speed and accuracy. The two factors will define the proficiency of the person in typing. Some typing test used character based calculation in which 5 characters count as a word, regardless how many characters in the particular word. These Character based calculation has its own benefit like it independent from the text passage, there may be more lengthy word in one passage then other, but its calculate same speed all time.";
+			var user = document.getElementById("usem").value;
+			
+			function ontype() 
+			{
+				var initial= "Typing speed test or usually typing test used for a user’s typing speed and accuracy. The two factors will define the proficiency of the person in typing. Some typing test used character based calculation in which 5 characters count as a word, regardless how many characters in the particular word. These Character based calculation has its own benefit like it independent from the text passage, there may be more lengthy word in one passage then other, but its calculate same speed all time.";
+				var user = document.getElementById("usem").value;
+				
+				var len_user = user.length;
+				var sliced = initial.slice(0,len_user);
+					
+					if (sliced == user){
+						document.getElementById("usem").style.color="green";
+					}	
+					else{
+						document.getElementById("usem").style.color="red";
+						}
+			}
+				var start;
+				var end;
+
+			function timer_start() {
+				var t1 = new Date();
+				start = t1.getTime();
+			}
+
+			function Submit() {
+				var Initial = "Typing speed test or usually typing test used for a user’s typing speed and accuracy. The two factors will define the proficiency of the person in typing. Some typing test used character based calculation in which 5 characters count as a word, regardless how many characters in the particular word. These Character based calculation has its own benefit like it independent from the text passage, there may be more lengthy word in one passage then other, but its calculate same speed all time.";
+				var t2 = new Date();
+			    end = t2.getTime();
+				
+				var speed = Initial.length / diff(start , end);
+
+				if (document.getElementById("usem").value == initial) {
+					document.getElementById("k").innerHTML = "The speed is " + speed + " characters per second";
+				}
+				else{
+					document.getElementById("k").innerHTML = "You have not typed completely or made some mistake.";
+				}
+			}
+
+			function diff(t1,t2){
+				var t1;
+				var t2;
+
+				var differ = t2-t1;
+				var diffby = differ/1000;
+				return diffby;
+				
+				}
+
+			
+		</script>
+
+
+	<p id="k" style="font-family: Tajawal; font-size:30px; color: black;"> </p>
+	<p id="j"> </p>
+
+
+</body>
+</html>
