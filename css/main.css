@@ -1,0 +1,30 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	max-width: 1600px;
+	margin: 0 auto;	
+	background-color:#7A7A7A;
+	}
+.hed{
+	padding-top: 10px;
+	text-align: center;
+	color:black;
+	background-color: #2196F3;
+	height: 100px;
+}
+hr{	border-color: black;
+}
+.topic{
+	padding-top: 5px;
+	padding-left: 5px;
+}
+.textarea{
+	background-color: #bcd1f2
+}
+.button{
+	font-size: 30px;
+	position: relative;
+	left: 40%;
+}
